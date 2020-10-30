@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        table{
+            margin: auto;
+        }
+        input{
+            width: 100px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            font-size: 30px;
+        }
+        #result{
+            width: 200px;
+            background-color: white;
+            color: black;
+            font-weight:bold;
+        }
+    </style>
+    <script>
+        function add(x)
+        {
+            document.getElementById("result").value+=x
+        }
+        function solve()
+        {
+            var y;
+            y=eval(document.getElementById("result").value)
+            document.getElementById("result").value=y
+        }
+        function cleartext()
+        {
+            document.getElementById("result").value=""
+        }
+        function remove()
+        {
+            var z,last;
+            z=document.getElementById("result").value
+            //last=z.charAt(z.length-1)
+            document.getElementById("result").value=z.slice(0,z.length-1)
+        }
+    </script>
+</head>
+<body>
+    <h1>CALCULATOR</h1>
+    <table border="1">
+        <tr>
+            <td><input type="button" value="clr" onclick="cleartext()"></td>
+            <td><input type="button" value="rem" onclick="remove()"></td>
+            <td colspan="2"><input type="text" id="result"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="+" onclick="add('+')"></td>
+            <td><input type="button" value="1" onclick="add('1')"></td>
+            <td><input type="button" value="2" onclick="add('2')"></td>
+            <td><input type="button" value="3" onclick="add('3')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="-" onclick="add('-')"></td>
+            <td><input type="button" value="4" onclick="add('4')"></td>
+            <td><input type="button" value="5" onclick="add('5')"></td>
+            <td><input type="button" value="6" onclick="add('6')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="x" onclick="add('*')"></td>
+            <td><input type="button" value="7" onclick="add('7')"></td>
+            <td><input type="button" value="8" onclick="add('8')"></td>
+            <td><input type="button" value="9" onclick="add('9')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="/" onclick="add('/')"></td>
+            <td><input type="button" value="%" onclick="add('%')"></td>
+            <td><input type="button" value="0" onclick="add('0')"></td>
+            <td><input type="button" value="=" onclick="solve()"></td>
+        </tr>
+    </table>
+</body>
+</html>
