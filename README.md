@@ -1,3 +1,3 @@
 # hello-world
 
-Hi,Iam Jyoshna
+print("jyoshna")
